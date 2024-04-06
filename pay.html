@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration with Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .registration-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+   
+    <div class="registration-container">
+        <h1>Vehicle Registration with Payment</h1>
+        <form action="file:///C:/Users/HP/Downloads/booking%20plat/parking22.html" method="post" >
+            <div class="input-group">
+                <label for="ownerName">Owner Name:</label>
+                <input type="text" id="ownerName" name="ownerName" required>
+            </div>
+            <div class="input-group">
+                <label for="vehicleNumber">Vehicle Number:</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" required>
+            </div>
+            <div class="input-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="input-group">
+                <label for="entryDate">Entry Date:</label>
+                <input type="date" id="entryDate" name="entryDate" required>
+            </div>
+            <div class="input-group">
+                <label for="entryTime">Entry Time:</label>
+                <input type="time" id="entryTime" name="entryTime" required>
+            </div>
+            <div class="input-group">
+                <label for="exitTime">Exit Time:</label>
+                <input type="time" id="exitTime" name="exitTime" required>
+            </div>
+            <div class="input-group">
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+            </div>
+            <div class="input-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <div class="input-group">
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="date" id="expirationDate" name="expirationDate" required>
+            </div>
+            <div class="input-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+            </div>
+            <button type="submit"  >Register & Pay</button>
+           
+        </form>
+        
+    </div>
+
+
+    <script>
+        const registrationForm = document.getElementById('registrationForm');
+
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const ownerName = document.getElementById('ownerName').value;
+            const vehicleNumber = document.getElementById('vehicleNumber').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const entryDate = document.getElementById('entryDate').value;
+            const entryTime = document.getElementById('entryTime').value;
+            const exitTime = document.getElementById('exitTime').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const cvv = document.getElementById('cvv').value;
+            const expirationDate = document.getElementById('expirationDate').value;
+            const amount = document.getElementById('amount').value;
+
+            // Example: Display the registration and payment details
+            alert(`Registration & Payment Details:\nOwner Name: ${ownerName}\nVehicle Number: ${vehicleNumber}\nPhone Number: ${phoneNumber}\nEntry Date: ${entryDate}\nEntry Time: ${entryTime}\nExit Time: ${exitTime}\nPayment Method: ${paymentMethod}\nCard Number: ${cardNumber}\nCVV: ${cvv}\nExpiration Date: ${expirationDate}\nAmount: $${amount}`);
+        });
+
+    </script>
+</body>
+</html>

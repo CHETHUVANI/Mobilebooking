@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Booking</title>
+</head>
+<body>
+    
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #parking-slots {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
+            gap: 10px;
+        }
+
+        .slot {
+            width: 100px;
+            height: 100px;
+            background-color: green; /* Green for available slots */
+            border-radius: 5px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .booked {
+            background-color: red !important; /* Red for booked slots */
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Parking Booking System</h1>
+    <div id="parking-slots"></div>
+
+    <script>
+        const slotsContainer = document.getElementById('parking-slots');
+
+        // Create parking slots dynamically
+        for (let i = 1; i <= 20; i++) {
+            const slot = document.createElement('div');
+            slot.classList.add('slot');
+            slot.textContent = `Slot ${i}`;
+            slot.addEventListener('click', bookSlot);
+            slotsContainer.appendChild(slot);
+        }
+
+        function bookSlot(event) {
+            const selectedSlot = event.target;
+
+            if (selectedSlot.classList.contains('booked')) {
+                alert('Slot is already booked. Please try another one.');
+            } else {
+                selectedSlot.classList.add('booked');
+                selectedSlot.removeEventListener('click', bookSlot);
+                alert('Slot booked successfully!');
+            }
+        }
+    </script>
+</body>
+</html>
